@@ -26,14 +26,5 @@ def detecao(img):
     if not detected_faces:
         raise Exception('sem rostos para treinar')
     print('rostos treinados')
-    for face in detected_faces: print (face.face_id)
-    first_image_face_ID = detected_faces[0].face_id
-    test_image_array2 = glob.glob('faces/sebastiao.jpg')
-    imagem2 = open(test_image_array[0], 'r+b')
-    detected_faces2 = face_client.face.detect_with_stream(imagem2, detection_model='detection_03')
-    second_image_face_IDs = list(map(lambda x: x.face_id, detected_faces2))
-    similar_faces = face_client.face.find_similar(face_id=first_image_face_ID, face_ids=second_image_face_IDs)
-    if not similar_faces:
-        print('No similar faces found')
-    else:print('sebastião detectado')
+    
     
