@@ -129,4 +129,4 @@ dmypy.json
 .pyre/
 key.py
 c1.png
-sebastiao.jpg
+*.jpg
