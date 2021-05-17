@@ -53,9 +53,11 @@ def detecao(img,persongroup):
     detected_faces = face_client.face.detect_with_stream(imagem, detection_model='detection_03')
     rostos = []
     for face in detected_faces:
+        print(face.face_id)
         rostos.append(face.face_id)
     results = face_client.face.identify(rostos, persongroup)
+    if not results:print("sem correspondencias")
     for person in results:
-        print(person.candidates[0].confidence)
-
-    
+        if len(results)>0:
+            print("correspondencias encontradas: ",person.face_id, " confiança: ",person.candidates[0].confidence)
+        else: print("sem correspondencias")

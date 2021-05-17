@@ -1,7 +1,6 @@
 import cv2
 import foto as f
 import reconhece_face as rc
-import sys
 #declarando as coisas
 c = 0
 #coisas relacionasdas ao cv2
@@ -20,8 +19,8 @@ while True:
     #inicio do tracking
     faces = faceCascade.detectMultiScale(
         gray,
-        scaleFactor=1.1,
-        minNeighbors=5,
+        scaleFactor=1.2,
+        minNeighbors=9,
         minSize=(30, 30)
     )
     #verifica a quantidade de pessoas num fame
