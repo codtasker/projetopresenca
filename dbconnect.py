@@ -8,14 +8,13 @@ conn_str = (
 def alunonovo(nome,idazure,classe):
     cnxn = pyodbc.connect(conn_str)
     crsr = cnxn.cursor()
-    str_bd = "insert into aluno(nome,id_azure) values ('"+nome+"','"+idazure+"')"
+    str_bd = "insert into aluno(nome,id_azure,classe) values ('"+nome+"','"+idazure+"',"+classe+")"
     crsr.execute(str_bd)
     cnxn.commit()
 
 def retornome(id):
     cnxn = pyodbc.connect(conn_str)
     crsr = cnxn.cursor()
-    print("conected")
     crsr.execute("select id_azure,nome from aluno")
     rows = crsr.fetchall()
     for row in rows:

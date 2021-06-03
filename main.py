@@ -9,7 +9,7 @@ faceCascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontal
 #iniciando a classe reconhece_face
 #rc.dfl("classe1")
 rc.nfl("classe1")
-pessoa = rc.nr("sebastiao","classe1")
+pessoa = rc.nr("sebastiao nogueira","classe1")
 #while para gerar um video com varios frames
 while True:
     #lendo a camera e guardando numa variavel

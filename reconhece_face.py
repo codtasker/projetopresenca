@@ -27,7 +27,7 @@ def nr(nome,fl):
     foto = open(image[0], 'r+b')
     pessoa = face_client.face_list.add_face_from_stream(fl, foto)
     pes = pessoa.persisted_face_id
-    db.alunonovo(nome,pes,"1")
+    db.alunonovo(nome,pes,"7")
     return pessoa
 
 def dfl(nome):
@@ -39,14 +39,11 @@ def detecao(img,facelist):
     imagem = open(test_image_array[0], 'r+b')
     detected_faces = face_client.face.detect_with_stream(imagem, detection_model='detection_03')
     rostos = []
-    print("here2")
     for face in detected_faces:
-        print(face.face_id)
         rostos.append(face.face_id)
     results = face_client.face.find_similar(rostos[0], face_list_id= facelist)
-    print(results)
     if not results:
         print('no comento')
     for persistent in results:
-        print("here")
+        print("id: ",persistent.persisted_face_id)
         db.retornome(persistent.persisted_face_id)
