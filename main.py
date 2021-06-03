@@ -29,7 +29,7 @@ while True:
             print(faces.shape[0])
             c = faces.shape[0]
             f.selfie(frame)
-            rc.detecao('faces/c1.png',"classe1",pessoa.persisted_face_id)
+            rc.detecao('faces/c1.png',"classe1")
     except: 
         c = 0
     #cria retangulos nas imagens
