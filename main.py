@@ -8,8 +8,6 @@ video_capture = cv2.VideoCapture(0)
 faceCascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 #iniciando a classe reconhece_face
 #rc.dfl("classe1")
-rc.nfl("classe1")
-pessoa = rc.nr("sebastiao nogueira","classe1")
 #while para gerar um video com varios frames
 while True:
     #lendo a camera e guardando numa variavel
@@ -40,7 +38,6 @@ while True:
     #tecla q para sair do app
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
-rc.dfl("classe1")
 #destruindo as janelas e dados captados pelo cv2
 video_capture.release()
 cv2.destroyAllWindows()
